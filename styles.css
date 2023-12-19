@@ -7,23 +7,44 @@ body {
 
 header {
     text-align: center;
-    background-color: #f2f2f2;
-    padding: 10px;
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.subtitle {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 16px;
+    color: #777;
+    margin: 0;
+}
+
+nav {
+    margin-top: 20px;
+    text-align: center;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 15px;
+nav li {
+    display: inline-block;
+    margin: 0 15px;
 }
 
-a {
+nav a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: cornflowerblue;
     text-decoration: none;
-    color: #333;
 }
 
 section {
@@ -36,13 +57,21 @@ footer {
     padding: 10px;
 }
 
-.content p {
-    font-family: 'Times New Roman', serif;
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 1.6;
-    color: #333;
-    margin: 20px 0;
-    padding-left: 2in;
-    padding-right: 2in;
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    nav ul {
+        display: none;
+    }
+
+    nav .menu-button {
+        display: block;
+        margin-top: 10px;
+        cursor: pointer;
+        color: cornflowerblue;
+        font-size: 18px;
+    }
+
+    nav .menu-button::after {
+        content: '\2630';
+    }
 }
