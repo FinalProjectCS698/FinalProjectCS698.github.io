@@ -101,3 +101,20 @@ table {
 .button-link a:hover {
     background-color: darkslateblue; /* Adjust button background color on hover */
 }
+
+.horizontal-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.confusion-matrix {
+    text-align: center;
+    margin: 10px;
+}
+
+.image-matrix {
+    width: 300px;
+    height: 300px;
+}

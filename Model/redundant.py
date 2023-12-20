@@ -1,8 +1,11 @@
 import pandas as pd
 import os
 
+# Get the current working directory
+current_directory = os.getcwd()
+
 # Set the path to your data directory
-data_path = r'C:\Users\Rachel\Documents\FinalProjData'
+data_path = os.path.join(current_directory, 'Data')
 
 # Read the combined CSV file into a DataFrame
 combined_csv_path = os.path.join(data_path, 'Combined_Condensed_Data.csv')

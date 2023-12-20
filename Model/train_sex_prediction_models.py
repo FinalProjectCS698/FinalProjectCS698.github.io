@@ -10,8 +10,11 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
+# Get the current working directory
+current_directory = os.getcwd()
+
 # Set the path to your data directory
-data_path = r'C:\Users\Rachel\Documents\FinalProjData'
+data_path = os.path.join(current_directory, 'Data')
 
 # Read the combined CSV file into a DataFrame
 combined_csv_path = os.path.join(data_path, 'Combined_Sex_Condensed_Data.csv')

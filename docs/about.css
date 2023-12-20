@@ -19,9 +19,7 @@ p {
 }
 
 /* 
-This CSS uses a combination of Flexbox and Grid layout to create a responsive design that works well on both large screens and small screens (such as mobile devices). The layout of the page is largely controlled by the .container, .sidebar, and .main-content rules. CSS Variables are used extensively to ensure consistency and maintainability. The calc function is used to calculate values for various properties dynamically. The layout automatically adjusts when the viewport width is 768px or less thanks to the media query, making the design responsive. The print styles apply when the page is printed, ensuring that the printed version looks good too.
-This CSS uses CSS Variables (also known as CSS Custom Properties) for convenient maintainability and better performance.
-The :root selector refers to the root element. In HTML, the root element is always the <html> element.
+
    
 */
 

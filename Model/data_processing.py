@@ -1,8 +1,11 @@
 import pandas as pd
 import os
 
+# Get the current working directory
+current_directory = os.getcwd()
+
 # Set the path to your data directory
-data_path = r'C:\Users\Rachel\Documents\FinalProjData'
+data_path = os.path.join(current_directory, 'Data')
 
 
 # Function to preprocess and create condensed CSV files
