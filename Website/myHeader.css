@@ -1,0 +1,54 @@
+header {
+    text-align: center;
+    padding: 20px 0; /* Adding vertical padding to create some space between header and content */
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0; /* Remove margin around the header */
+}
+
+/* Adding styles for the subtitle */
+.subtitle {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 16px;
+    color: #777; /* Setting subtitle color to a lighter grey */
+    margin: 0; /* Remove margin around the subtitle */
+
+}
+
+/* Adding styles for the navigation bar */
+nav {
+    margin-top: 20px; /* Adding some space between the subtitle and navigation bar */
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: cornflowerblue;
+    text-decoration: none;
+}
+
+/* Styling for the heading */
+article h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}

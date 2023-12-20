@@ -1,0 +1,43 @@
+/* Adding styles for the footer */
+footer {
+    background-color: #f2f2f2;
+    padding: 20px 0;
+    text-align: center;
+
+    /* Fixed position to stick footer to the bottom */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 100; /* Optional: Use a z-index to ensure footer is on top of other content */
+}
+
+/* Styling for the <p> in the footer */
+footer p {
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin: 10px 0;
+    font-style: italic; /* Added property to make the text italicized */
+}
+
+/* Adding styles for the social media links */
+.social-links {
+    font-size: 24px;
+}
+
+.social-links a {
+    color: cornflowerblue; /* Change the icon color */
+    margin: 10px; /* Add some spacing between icons */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Add a smooth color transition on hover */
+}
+
+.social-links a:hover {
+    color: midnightblue; /* Change the icon color on hover */
+}
+
+
+
+

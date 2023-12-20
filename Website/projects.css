@@ -1,0 +1,220 @@
+/* :root styles */
+:root {
+    --color-primary: black;
+    --color-secondary: #abcdef;
+    --color-accent: cornflowerblue;
+    --hover-color: cornflowerblue;
+    --background-color: white;
+
+    --base-spacing: 1.5rem;
+    --section-spacing: 2.5rem;
+    --sidebar-spacing: 1.5rem;
+
+    --font-primary: 'Times New Roman', sans-serif;
+    --icon-font-size: 2rem;
+    --transition-speed: 0.3s;
+    --base-font-size: 1rem;
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.5rem;
+    --h4-font-size: 1.25rem;
+
+    --base-line-height: 1.5;
+    --section-separator: 1px solid var(--color-accent);
+}
+
+/* Global styles */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-secondary);
+}
+
+p, i {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container styles */
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 90vw;
+    margin: 2rem auto;
+    padding: 0;
+    background-color: #ebecf0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Sidebar styles */
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--sidebar-spacing);
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+/* Sidebar portrait styles */
+.sidebar .portrait img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+/* Links styles */
+.links {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.links a {
+    color: inherit;
+    font-size: var(--icon-font-size);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.links a:hover {
+    color: var(--hover-color);
+    transform: scale(1.1);
+}
+
+/* Main content styles */
+.main-content {
+    flex: 3;
+    padding: var(--section-spacing);
+}
+
+/* Header and section styles */
+header,
+.main-content section,
+.main-content header {
+    margin-bottom: var(--section-spacing);
+    padding-bottom: var(--section-spacing);
+    border-bottom: var(--section-separator);
+}
+
+/* Divider styles */
+.divider {
+    padding-bottom: 0.5rem;
+    border-bottom: var(--section-separator);
+    margin-bottom: 0.5rem;
+}
+
+/* Last child styles */
+.main-content section:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+/* Skill list styles */
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: calc(0.5 * var(--base-spacing));
+    margin-bottom: 1rem;
+}
+
+.skill-list li {
+    display: flex;
+    align-items: center;
+}
+
+.fa-skill-icon {
+    margin-right: var(--base-spacing);
+    font-size: var(--icon-font-size);
+}
+
+/* Responsive design styles */
+@media (max-width: 768px) {
+    body {
+        background: none;
+    }
+
+    .container {
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+    }
+
+    .sidebar {
+        order: -1;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .main-content {
+        padding-top: 1rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    :root {
+        --base-font-size: 12pt;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        color: #333;
+    }
+
+    .container {
+        flex-direction: column;
+        margin: 0.1rem;
+    }
+
+    .sidebar, .main-content, p {
+        padding: 0.2rem;
+    }
+
+    .sidebar {
+        order: -1;
+        height: auto;
+    }
+
+    .main-content {
+        padding-top: 0.2rem;
+    }
+
+    p {
+        text-align: justify;
+        margin-bottom: 0.2rem;
+    }
+
+    .skill-list {
+        grid-template-columns: repeat(5, 1fr);
+        list-style-type: none;
+        gap: calc(0.5 * var(--base-spacing));
+    }
+
+    .links, h1, .portrait {
+        display: none;
+    }
+
+    .main-content section, .main-content header {
+        margin-bottom: calc(0.8 * var(--section-spacing));
+        padding-bottom: calc(0.8 * var(--section-spacing));
+        border-bottom: calc(0.8 * var(--section-separator));
+    }
+}
+
+/*  */
