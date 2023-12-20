@@ -10,11 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="myHeader.css">
     <link rel="stylesheet" href="myFooter.css">
-    <link rel="stylesheet" href="myAuthorBox.css">
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="CurrentResearchProjects.css"> <!-- Your custom CSS file -->
     <link rel="stylesheet" type="text/css" href="./projects.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
     <header>
@@ -33,14 +33,12 @@
     <div class="container"> 
 
         <main class="main-content" role="main">
-            <div role="banner">
-                <h1>Automated Classification of Insects Using Wingbeat Frequency</h1>
-            </div>
-
-
-
+            
             <section class="project-section">
-                <br>
+              <div role="banner">
+                <!-- <h1>Automated Classification of Insects Using Wingbeat Frequency</h1> -->
+              </div>
+                
                 <h2> Why is this research is important? </h2>
                 <p> This work addresses the need for more efficient and non-intrusive insect population surveying methods. Traditional approaches are labor-intensive and time-consuming, often requiring physical presence in remote areas. The use of remote sensing, particularly focusing on wingbeat frequency (WBF), presents a transformative solution. The motivation arises from the challenges in traditional methods, where overlapping WBF within insect genera and families poses classification difficulties. By exploring discriminative factors like body-wing ratio, this work aims to enhance precision in insect identification. The implications extend to agriculture, healthcare, and conservation, offering benefits such as tailored pest control, vector control, and ecological impact assessment for ecosystem preservation. </p>
                 
@@ -73,14 +71,45 @@
                     <br><br> The final phase involved building and testing machine learning models using the <span class="highlighted-text">train_family_prediction_models.py</span> script. The RandomForest, SVM, and KNN classifiers were employed to predict insect families based on features. The script handled missing values, split the data into training and testing sets, and evaluated the models using metrics such as accuracy, precision, recall, and F1 score. Feature importances were also explored, providing insights into the significance of different features in making predictions. Additional scripts, <span class="highlighted-text">train_sex_prediction_models.py</span> and <span class="highlighted-text">multioutput_prediction.py</span> predicted insect sex based on features and performed multioutput prediction for family and sex.
                   </p>
                   
-                <h2> Evaluation Metrics & Results </h2>
+                  <h2>Evaluation Metrics & Results</h2>
+
+                  <table>
+                    <tr>
+                      <th>Task</th>
+                      <th>Models Evaluated</th>
+                      <th>Metrics</th>
+                    </tr>
+                    <tr>
+                      <td>Family Prediction Models</td>
+                      <td>Random Forest, SVM, k-Nearest Neighbors</td>
+                      <td>Accuracy, Precision, Recall, F1 Score, Confusion Matrix</td>
+                    </tr>
+                    <tr>
+                      <td>Sex Prediction Models</td>
+                      <td>Random Forest, SVM, k-Nearest Neighbors</td>
+                      <td>Accuracy, Precision, Recall, F1 Score, Confusion Matrix</td>
+                    </tr>
+                    <tr>
+                      <td>MultiOutput Prediction Model</td>
+                      <td>Multi-Output Random Forest (Sex, Family)</td>
+                      <td>Accuracy (Sex Prediction, Family Prediction), Precision (Sex Prediction, Family Prediction), Recall (Sex Prediction, Family Prediction), F1 Score (Sex Prediction, Family Prediction), Confusion Matrix (Sex Prediction, Family Prediction)</td>
+                    </tr>
+                  </table>
+                  <br>
+                  <div class="button-container">
+                    <p class="button-link"><a href="results.html">Page 2</a></p>
+                </div>
             </section>
+            
+          
         </main>
     </div>
+  
 
     <!-- <footer>
         <p>Contact: <a href="mailto:rnd22@njit.edu">rnd22@njit.edu</a></p>
     </footer> -->
+
 </body>
 </html>
 

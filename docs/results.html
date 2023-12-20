@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylestwo.css">
+  <link rel="stylesheet" href="myHeader.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <title>Model Results</title>
+</head>
+
+<body>
+  <header>
+    <h1>Automated Classification of Insects Using Wingbeat Frequency</h1>
+    <p class="subtitle">Project by Rachel Deahl Kostelnik</p>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="https://github.com/FinalProjectCS698/finalprojectcs698.github.io" target="_blank">Demo</a></li>
+
+        </ul>
+    </nav>
+</header>
+  <div class="container">
+    <select id="resultsDropdown" onchange="showResults()">
+      <option value="sexPrediction">Results for Sex Prediction</option>
+      <option value="familyPrediction">Results for Family Prediction</option>
+      <option value="multioutputPrediction">Results for MultiOutput Prediction</option>
+    </select>
+
+    <!-- Results for Sex Prediction -->
+    <div id="sexPrediction" class="main-content hidden">
+      <header>
+        <h1>Results for Sex Prediction:</h1>
+      </header>
+      <!-- Random Forest Model -->
+      <section>
+        <h2>Interpretation:</h2>
+        <ul>
+          <li>All models perform very well with high accuracy and balanced precision and recall.</li>
+          <li>The Random Forest model slightly outperforms SVM and KNN in terms of accuracy.</li>
+          <li>For the Female class, all models show very high precision, recall, and F1 scores.</li>
+          <li>For the Male class, there is a slight decrease in precision, recall, and F1 score, indicating some misclassification.</li>
+          <li>Overall, the models are effective in predicting sex, especially for the Female class. Fine-tuning and hyperparameter optimization could potentially improve performance further.</li>
+        </ul>
+        <h2>Random Forest Model:</h2>
+
+        <table class="model-table">
+          <tr>
+            <td>Accuracy:</td>
+            <td>98.74%</td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>98.74%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>98.74%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>98.74%</td>
+          </tr>
+          <!-- Detailed evaluation per class -->
+          <tr>
+            <td colspan="2" class="sub-heading">Detailed evaluation per class:</td>
+          </tr>
+          <tr>
+            <td class="class-heading">Female:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>99%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>99%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>99%</td>
+          </tr>
+          <tr>
+            <td class="class-heading">Male:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>97%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>95%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>96%</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- SVM Model -->
+      <section>
+        <h2>SVM Model:</h2>
+        <table class="model-table">
+          <tr>
+            <td>Accuracy:</td>
+            <td>98.68%</td>
+          </tr>
+          <tr>
+            <td>Precision</td>
+            <td>98.68%</td>
+          </tr>
+          <tr>
+            <td>Recall</td>
+            <td>98.68%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>98.67%</td>
+          </tr>
+          <!-- Detailed evaluation per class -->
+          <tr>
+            <td colspan="2" class="sub-heading">Detailed evaluation per class:</td>
+          </tr>
+          <tr>
+            <td class="class-heading">Female:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>99%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>99%</td>
+          </tr>
+          <tr>
+            <td class="class-heading">Male:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>98%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>93%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>95%</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- KNN Model -->
+      <section>
+        <h2>KNN Model:</h2>
+        <table class="model-table">
+          <tr>
+            <td>Accuracy:</td>
+            <td>98.43%</td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>98.42%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>98.43%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>98.41%</td>
+          </tr>
+          <!-- Detailed evaluation per class -->
+          <tr>
+            <td colspan="2" class="sub-heading">Detailed evaluation per class:</td>
+          </tr>
+          <tr>
+            <td class="class-heading">Female:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>99%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>99%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>99%</td>
+          </tr>
+          <tr>
+            <td class="class-heading">Male:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>97%</td>
+          </tr>
+          <tr
+
+>
+            <td>Recall:</td>
+            <td>92%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>95%</td>
+          </tr>
+        </table>
+      </section>
+
+
+    </div>
+
+    <!-- Results for Family Prediction -->
+    <div id="familyPrediction" class="main-content hidden">
+      <header>
+        <h1>Results for Family Prediction:</h1>
+      </header>
+      <!-- Random Forest Model -->
+      <section>
+        <h2>Interpretation:</h2>
+        <ul>
+          <li>All models perform very well with high accuracy and balanced precision and recall.</li>
+          <li>The Random Forest model slightly outperforms SVM and KNN in terms of accuracy.</li>
+          <li>For the Female class, all models show very high precision, recall, and F1 scores.</li>
+          <li>For the Male class, there is a slight decrease in precision, recall, and F1 score, indicating some misclassification.</li>
+          <li>Overall, the models are effective in predicting sex, especially for the Female class. Fine-tuning and hyperparameter optimization could potentially improve performance further.</li>
+        </ul>
+        <h2>Random Forest Model:</h2>
+        <table class="model-table">
+          <tr>
+            <td>Accuracy:</td>
+            <td>96.17%</td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>96.16%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>96.17%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>96.16%</td>
+          </tr>
+          <!-- Detailed evaluation per class -->
+          <tr>
+            <td colspan="2" class="sub-heading">Detailed evaluation per class:</td>
+          </tr>
+          <tr>
+            <td class="class-heading">Aedes:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>78%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>76%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>77%</td>
+          </tr>
+          <tr>
+            <td class="class-heading">Anopheles:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>85%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>86%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>86%</td>
+          </tr>
+          <tr>
+            <td class="class-heading">BumbleBee:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>97%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>88%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>93%</td>
+          </tr>
+          <tr>
+            <td class="class-heading">HouseFly:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>100%</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- SVM Model -->
+      <section>
+        <h2>SVM Model:</h2>
+        <table class="model-table">
+          <tr>
+            <td>Accuracy:</td>
+            <td>94.33%</td>
+          </tr>
+          <tr>
+            <td>Precision</td>
+            <td>94.46%</td>
+          </tr>
+          <tr>
+            <td>Recall</td>
+            <td>94.33%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>94.35%</td>
+          </tr>
+          <!-- Detailed evaluation per class -->
+          <tr>
+            <td colspan="2" class="sub-heading">Detailed evaluation per class:</td>
+          </tr>
+          <tr>
+            <td class="class-heading">Aedes:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>65%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>73%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>69%</td>
+          </tr>
+          <tr>
+            <td class="class-heading">Anopheles:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>81%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>75%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>78%</td>
+          </tr>
+          <tr>
+            <td class="class-heading">BumbleBee:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>93%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>58%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>71%</td>
+          </tr>
+          <tr>
+            <td class="class-heading">HouseFly:</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>F1 Score:</td>
+            <td>100%</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- KNN Model -->
+      <section>
+        <h2>KNN Model:</h2>
+        <table class="model-table">
+          <tr>
+            <td>Accuracy:</td>
+            <td>94.82%</td>
+          </tr>
+          <tr>
+            <td>Precision:</td>
+            <td>94.80%</td>
+          </tr>
+          <tr>
+            <td>Recall:</td>
+            <td>94.82%</```html
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>94.81%</td>
+            </tr>
+            <!-- Detailed evaluation per class -->
+            <tr>
+              <td colspan="2" class="sub-heading">Detailed evaluation per class:</td>
+            </tr>
+            <tr>
+              <td class="class-heading">Aedes:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>69%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>68%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>69%</td>
+            </tr>
+            <tr>
+              <td class="class-heading">Anopheles:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>80%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>81%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>80%</td>
+            </tr>
+            <tr>
+              <td class="class-heading">BumbleBee:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>95%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>93%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>94%</td>
+            </tr>
+            <tr>
+              <td class="class-heading">HouseFly:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>100%</td>
+            </tr>
+          </table>
+        </section>
+  
+
+      </div>
+  
+      <!-- Results for Family Prediction -->
+      <div id="familyPrediction" class="main-content hidden">
+        <header>
+          <h1>Results for Family Prediction:</h1>
+        </header>
+        <!-- Random Forest Model -->
+        <section>
+          <h2>Random Forest Model:</h2>
+          <table class="model-table">
+            <tr>
+              <td>Accuracy:</td>
+              <td>96.17%</td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>96.16%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>96.17%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>96.16%</td>
+            </tr>
+            <!-- Detailed evaluation per class -->
+            <tr>
+              <td colspan="2" class="sub-heading">Detailed evaluation per class:</td>
+            </tr>
+            <tr>
+              <td class="class-heading">Aedes:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>78%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>76%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>77%</td>
+            </tr>
+            <tr>
+              <td class="class-heading">Anopheles:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>85%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>86%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>86%</td>
+            </tr>
+            <tr>
+              <td class="class-heading">BumbleBee:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>97%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>88%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>93%</td>
+            </tr>
+            <tr>
+              <td class="class-heading">HouseFly:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>100%</td>
+            </tr>
+          </table>
+        </section>
+  
+        <!-- SVM Model -->
+        <section>
+          <h2>SVM Model:</h2>
+          <table class="model-table">
+            <tr>
+              <td>Accuracy:</td>
+              <td>94.33%</td>
+            </tr>
+            <tr>
+              <td>Precision</td>
+              <td>94.46%</td>
+            </tr>
+            <tr>
+              <td>Recall</td>
+              <td>94.33%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>94.35%</td>
+            </tr>
+            <!-- Detailed evaluation per class -->
+            <tr>
+              <td colspan="2" class="sub-heading">Detailed evaluation per class:</td>
+            </tr>
+            <tr>
+              <td class="class-heading">Aedes:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>65%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>73%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+  
+  
+              <td>69%</td>
+            </tr>
+            <tr>
+              <td class="class-heading">Anopheles:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>81%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>75%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>78%</td>
+            </tr>
+            <tr>
+              <td class="class-heading">BumbleBee:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>93%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>58%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>71%</td>
+            </tr>
+            <tr>
+              <td class="class-heading">HouseFly:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>100%</td>
+            </tr>
+          </table>
+        </section>
+  
+        <!-- KNN Model -->
+        <section>
+          <h2>KNN Model:</h2>
+          <table class="model-table">
+            <tr>
+              <td>Accuracy:</td>
+              <td>94.82%</td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>94.80%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>94.82%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>94.81%</td>
+            </tr>
+            <!-- Detailed evaluation per class -->
+            <tr>
+              <td colspan="2" class="sub-heading">Detailed evaluation per class:</td>
+            </tr>
+            <tr>
+              <td class="class-heading">Aedes:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>69%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>68%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>69%</td>
+            </tr>
+            <tr>
+              <td class="class-heading">Anopheles:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>80%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>81%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>80%</td>
+            </tr>
+            <tr>
+              <td class="class-heading">BumbleBee:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>95%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>93%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>94%</td>
+            </tr>
+            <tr>
+              <td class="class-heading">HouseFly:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>100%</td>
+            </tr>
+          </table>
+        </section>
+  
+        <!-- Interpretation -->
+        <section>
+          <h2>Interpretation:</h2>
+          <ul>
+            <li>All models perform very well with high accuracy and balanced precision and recall.</li>
+            <li>The Random Forest model slightly outperforms SVM and KNN in terms of accuracy.</li>
+            <li>For the Aedes class, there is a moderate precision, recall, and F1 score.</li>
+            <li>For the Anopheles class, the model shows high precision, recall, and F1 score.</li>
+            <li>For the BumbleBee class, the model demonstrates very high precision, recall, and F1 score.</li>
+            <li>For the HouseFly class, the model achieves perfect precision, recall, and F1 score.</li>
+            <li>The overall family prediction model is effective across all classes, with some variations in performance.</li>
+          </ul>
+        </section>
+      </div>
+  
+      <!-- Results for MultiOutput Prediction -->
+      <div id="multioutputPrediction" class="main-content hidden">
+        <header>
+          <h1>Results for MultiOutput Prediction:</h1>
+        </header>
+        <h2>Interpretation:</h2>
+    <ul>
+      <li>All models perform well with high accuracy and balanced precision and recall for both Sex and Family predictions.</li>
+      <li>Random Forest and SVM models show slightly better performance compared to KNN in terms of accuracy and F1 score.</li>
+      <li>For Sex prediction, all models demonstrate high precision, recall, and F1 score.</li>
+      <li>For Family prediction, there is a slight variation in performance across classes, with Aedes and Anopheles showing slightly lower scores compared to BumbleBee and HouseFly.</li>
+      <li>The overall multi-output prediction model is effective in capturing patterns in both Sex and Family prediction tasks.</li>
+    </ul>
+        <!-- Random Forest Model -->
+        <section>
+          <h2>Random Forest Model:</h2>
+          <table class="model-table">
+            <tr>
+              <td>Accuracy:</td>
+              <td>91.25%</td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>91.30%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>91.25%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>91.22%</td>
+            </tr>
+            <!-- Detailed evaluation per class -->
+            <tr>
+              <td colspan="2" class="sub-heading">Detailed evaluation per class:</td>
+            </tr>
+            <tr>
+              <td class="class-heading">Sex:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>92%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>92%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>92%</td>
+            </tr>
+            <tr>
+              <td class="class-heading">Family:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Precision:</td>
+              <td>90%</td>
+            </tr>
+            <tr>
+              <td>Recall:</td>
+              <td>90%</td>
+            </tr>
+            <tr>
+              <td>F1 Score:</td>
+              <td>90%</td>
+            </tr>
+            <tr>
+              <tdclass="class-heading">MultiOutput:</td>
+              <td></td>
+              </tr>
+              <tr>
+              <td>Precision:</td>
+              <td>91%</td>
+              </tr>
+              <tr>
+              <td>Recall:</td>
+              <td>91%</td>
+              </tr>
+              <tr>
+              <td>F1 Score:</td>
+              <td>91%</td>
+              </tr>
+              </table>
+              </section>
+                <!-- SVM Model -->
+  <section>
+    <h2>SVM Model:</h2>
+    <table class="model-table">
+      <tr>
+        <td>Accuracy:</td>
+        <td>90.75%</td>
+      </tr>
+      <tr>
+        <td>Precision</td>
+        <td>90.80%</td>
+      </tr>
+      <tr>
+        <td>Recall</td>
+        <td>90.75%</td>
+      </tr>
+      <tr>
+        <td>F1 Score:</td>
+        <td>90.72%</td>
+      </tr>
+      <!-- Detailed evaluation per class -->
+      <tr>
+        <td colspan="2" class="sub-heading">Detailed evaluation per class:</td>
+      </tr>
+      <tr>
+        <td class="class-heading">Sex:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Precision:</td>
+        <td>91%</td>
+      </tr>
+      <tr>
+        <td>Recall:</td>
+        <td>91%</td>
+      </tr>
+      <tr>
+        <td>F1 Score:</td>
+        <td>91%</td>
+      </tr>
+      <tr>
+        <td class="class-heading">Family:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Precision:</td>
+        <td>89%</td>
+      </tr>
+      <tr>
+        <td>Recall:</td>
+        <td>89%</td>
+      </tr>
+      <tr>
+        <td>F1 Score:</td>
+        <td>89%</td>
+      </tr>
+      <tr>
+        <td class="class-heading">MultiOutput:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Precision:</td>
+        <td>90%</td>
+      </tr>
+      <tr>
+        <td>Recall:</td>
+        <td>90%</td>
+      </tr>
+      <tr>
+        <td>F1 Score:</td>
+        <td>90%</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- KNN Model -->
+  <section>
+    <h2>KNN Model:</h2>
+    <table class="model-table">
+      <tr>
+        <td>Accuracy:</td>
+        <td>91.10%</td>
+      </tr>
+      <tr>
+        <td>Precision:</td>
+        <td>91.12%</td>
+      </tr>
+      <tr>
+        <td>Recall:</td>
+        <td>91.10%</td>
+      </tr>
+      <tr>
+        <td>F1 Score:</td>
+        <td>91.08%</td>
+      </tr>
+      <!-- Detailed evaluation per class -->
+      <tr>
+        <td colspan="2" class="sub-heading">Detailed evaluation per class:</td>
+      </tr>
+      <tr>
+        <td class="class-heading">Sex:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Precision:</td>
+        <td>92%</td>
+      </tr>
+      <tr>
+        <td>Recall:</td>
+        <td>92%</td>
+      </tr>
+      <tr>
+        <td>F1 Score:</td>
+        <td>92%</td>
+      </tr>
+      <tr>
+        <td class="class-heading">Family:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Precision:</td>
+        <td>90%</td>
+      </tr>
+      <tr>
+        <td>Recall:</td>
+        <td>90%</td>
+      </tr>
+      <tr>
+        <td>F1 Score:</td>
+        <td>90%</td>
+      </tr>
+      <tr>
+        <td class="class-heading">MultiOutput:</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Precision:</td>
+        <td>91%</td>
+      </tr>
+      <tr>
+        <td>Recall:</td>
+        <td>91%</td>
+      </tr>
+      <tr>
+        <td>F1 Score:</td>
+        <td>91%</td>
+      </tr>
+    </table>
+  </section>
+
+  
+</div>
+
+<script src="script.js"></script>
+
+<div class="button-container">
+  <p class="button-link"><a href="about.html">Page 1</a></p>
+</div>
+
+</body>
+
+</html>

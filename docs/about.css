@@ -145,7 +145,7 @@ i {
     /* Add padding around the sidebar content */
     background-color: var(--color-secondary);
     /* Background color of the sidebar */
-    color: white;
+    color: black;
     /* Text color in the sidebar */
 }
 
