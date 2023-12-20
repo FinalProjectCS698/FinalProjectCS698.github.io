@@ -7,6 +7,18 @@ data_path = r'C:\Users\Rachel\Documents\FinalProjData'
 
 # Function to preprocess and create condensed CSV files
 def preprocess_and_save(input_filename, output_filename, selected_columns_labels):
+    """
+    Preprocesses a CSV file, selects specific columns, renames columns, adds a new column,
+    and saves the condensed DataFrame to a new CSV file.
+
+    Parameters:
+    - input_filename (str): The name of the input CSV file.
+    - output_filename (str): The name of the output condensed CSV file.
+    - selected_columns_labels (list): List of column labels to be selected.
+
+    Returns:
+    None
+    """
     # Read the CSV file into a pandas DataFrame
     df = pd.read_csv(os.path.join(data_path, input_filename))
 

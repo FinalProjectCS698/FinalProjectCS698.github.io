@@ -64,8 +64,6 @@ multi_output_rf_pred = multi_output_rf_model.predict(X_test)
 y_sex_pred = multi_output_rf_pred[:, 0]
 y_family_pred = multi_output_rf_pred[:, 1]
 
-from sklearn.metrics import confusion_matrix
-
 # Evaluate accuracy for sex prediction
 sex_accuracy = accuracy_score(y_sex_test, y_sex_pred)
 print("Sex Prediction Accuracy:", sex_accuracy)

@@ -44,6 +44,8 @@
           <li>For the Female class, all models show very high precision, recall, and F1 scores.</li>
           <li>For the Male class, there is a slight decrease in precision, recall, and F1 score, indicating some misclassification.</li>
           <li>Overall, the models are effective in predicting sex, especially for the Female class. Fine-tuning and hyperparameter optimization could potentially improve performance further.</li>
+          <li>Feature Importance: WBF (Wingbeat Frequency): 68.95%
+          </li>
         </ul>
         <h2>Random Forest Model:</h2>
 
@@ -246,11 +248,12 @@
       <section>
         <h2>Interpretation:</h2>
         <ul>
-          <li>All models perform very well with high accuracy and balanced precision and recall.</li>
-          <li>The Random Forest model slightly outperforms SVM and KNN in terms of accuracy.</li>
-          <li>For the Female class, all models show very high precision, recall, and F1 scores.</li>
-          <li>For the Male class, there is a slight decrease in precision, recall, and F1 score, indicating some misclassification.</li>
-          <li>Overall, the models are effective in predicting sex, especially for the Female class. Fine-tuning and hyperparameter optimization could potentially improve performance further.</li>
+          <li>All models perform well with high accuracy and balanced precision and recall</li>
+          <li>Random Forest outperforms SVM and KNN in terms of accuracy</li>
+          <li>For Aedes and Anopheles classes, all models show reasonable precision, recall, and F1 scores</li>
+          <li>BumbleBee class has slightly lower performance, especially in terms of recall, indicating some misclassification</li>
+          <li>HouseFly class is predicted with high precision, recall, and F1 score across all models</li>
+          <li>Feature importance: WBF (Wingbeat Frequency): 53.69%</li>
         </ul>
         <h2>Random Forest Model:</h2>
         <table class="model-table">
@@ -824,11 +827,11 @@
         </header>
         <h2>Interpretation:</h2>
     <ul>
-      <li>All models perform well with high accuracy and balanced precision and recall for both Sex and Family predictions.</li>
-      <li>Random Forest and SVM models show slightly better performance compared to KNN in terms of accuracy and F1 score.</li>
-      <li>For Sex prediction, all models demonstrate high precision, recall, and F1 score.</li>
-      <li>For Family prediction, there is a slight variation in performance across classes, with Aedes and Anopheles showing slightly lower scores compared to BumbleBee and HouseFly.</li>
-      <li>The overall multi-output prediction model is effective in capturing patterns in both Sex and Family prediction tasks.</li>
+      <li>The model achieves high accuracy in predicting sex, with balanced precision and recall</li>
+      <li>Family prediction has a relatively lower accuracy compared to sex prediction, indicating some difficulty in distinguishing between different insect families      </li>
+      <li>Feature importance scores for sex prediction highlight the importance of wingbeat frequency (WBF) (68.9%)       </li>
+      <li>The model seems to perform slightly better in predicting the female sex compared to the male sex, and it exhibits some challenges in distinguishing between Aedes and Anopheles families      </li>
+      <li>The overall multi-output prediction model is effective in capturing patterns in both Sex and Family prediction tasks</li>
     </ul>
         <!-- Random Forest Model -->
         <section>

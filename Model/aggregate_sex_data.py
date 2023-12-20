@@ -4,32 +4,45 @@ import os
 # Set the path to your data directory
 data_path = r'C:\Users\Rachel\Documents\FinalProjData'
 
-# Load each CSV file into a separate DataFrame
-files = [
-    "Condensed_AnophelesFemale_Sexed.csv",
-    "Condensed_AedesFemale_Sexed.csv",
-    "Condensed_AnophelesMale_Sexed.csv",
-    "Condensed_AedesMale_Sexed.csv",
-]
+def combine_sex_data():
+    """
+    Combines selected DataFrames with the 'Sex' label into one and saves it as a new CSV file.
 
-dfs = {}
+    Parameters:
+    None
 
-for file in files:
-    name = file.split('.')[0]  # Extract the name without extension
-    dfs[name] = pd.read_csv(os.path.join(data_path, file))
+    Returns:
+    None
+    """
+    # Load each CSV file into a separate DataFrame
+    files = [
+        "Condensed_AnophelesFemale_Sexed.csv",
+        "Condensed_AedesFemale_Sexed.csv",
+        "Condensed_AnophelesMale_Sexed.csv",
+        "Condensed_AedesMale_Sexed.csv",
+    ]
 
-# Combine selected DataFrames into one
-combined_sex_df = pd.concat(dfs.values(), ignore_index=True)
+    dfs = {}
 
-# Drop the first column
-combined_sex_df = combined_sex_df.iloc[:, 1:]
+    for file in files:
+        name = file.split('.')[0]  # Extract the name without extension
+        dfs[name] = pd.read_csv(os.path.join(data_path, file))
 
-# Save the combined DataFrame to a new CSV file
-combined_sex_csv_path = os.path.join(data_path, 'Combined_Sex_Condensed_Data.csv')
-combined_sex_df.to_csv(combined_sex_csv_path, index=False)
+    # Combine selected DataFrames into one
+    combined_sex_df = pd.concat(dfs.values(), ignore_index=True)
 
-# Additional analysis on the combined DataFrame
-print("\nCombined Sex DataFrame:")
-print(combined_sex_df.info())
-print(combined_sex_df.describe())
-print(combined_sex_df['Family'].value_counts())  # Check distribution of family labels
+    # Drop the first column
+    combined_sex_df = combined_sex_df.iloc[:, 1:]
+
+    # Save the combined DataFrame to a new CSV file
+    combined_sex_csv_path = os.path.join(data_path, 'Combined_Sex_Condensed_Data.csv')
+    combined_sex_df.to_csv(combined_sex_csv_path, index=False)
+
+    # Additional analysis on the combined DataFrame
+    print("\nCombined Sex DataFrame:")
+    print(combined_sex_df.info())
+    print(combined_sex_df.describe())
+    print(combined_sex_df['Family'].value_counts())  # Check distribution of family labels
+
+# Execute the combining function
+combine_sex_data()
