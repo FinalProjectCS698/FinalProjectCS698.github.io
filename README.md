@@ -11,7 +11,7 @@ Scripts
 1. data_processing.py
    Purpose: Preprocesses and condenses CSV files for various insect species.
    How to Run:
-   ```python data_processing.py```
+   python data_processing.py
 
 3. data_exploration.py
    Purpose: Reads the condensed CSV files, inspects the data, and checks the distribution of family labels.
