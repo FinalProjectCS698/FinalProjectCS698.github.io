@@ -53,6 +53,7 @@
                   <h2> How it Works </h2>
                   <p>The dataset consists of 6 .csv files, each with 65 columns (features) and a variable number of rows (samples):
                     <ul>
+
                       <strong>Data Files:</strong>
                         <ul>
                           <li><code>HouseFly.csv</code> - 58715 rows</li>
@@ -62,7 +63,23 @@
                           <li><code>AedesMale.csv</code> - 641 rows</li>
                           <li><code>BumbleBee.csv</code> - 509 rows</li>
                         </ul>
-                      </li>
+                      </li> <br>
+
+                      <div class="horizontal-container">
+
+                        <div class="distributions">
+                            <!-- distribution by family -->
+                            <img class="image-matrix" src="distribution.png" alt="WBF distibution by family">
+                            <p class="matrix-caption">Fig 1. Distribution of wingbeat frequencies amongst insect families; overlap can be seen at varying taxonomic levels.</p>
+                        </div>
+                    
+                        <div class="distributions">
+                            <!-- distribution by sex -->
+                            <img class="image-matrix" src="sexdist.png" alt="WBF distribution by sex">
+                            <p class="matrix-caption">Fig 2. Distribution of wingbeat frequencies amongst sexed insects; overlap can be seen amongst insects of the same sex more than between Aedes and Anopheles.</p>
+                        </div>
+                    
+                    </div>
                     </ul>
                     I developed a series of Python scripts to preprocess and analyze entomological data stored in CSV files. The <span class="highlighted-text">data_processing.py</span> script reads CSV files related to different insect families, removed headers, selected specific columns, and created new condensed CSV files with relevant columns. The processed datasets were enhanced through the incorporation of calculated ratios, achieved by implementing feature engineering techniques to capture the nuanced relationships between body and wing contributions. 
                     <br> <br> Using the <span class="highlighted-text">data_exploration.py</span> script, I created a dictionary of DataFrames for the processed files and performed exploratory data analysis. Information, descriptive statistics, and the distribution of family labels were examined, providing a comprehensive understanding of the dataset. 
