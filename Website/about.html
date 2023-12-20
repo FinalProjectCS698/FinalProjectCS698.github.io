@@ -40,10 +40,40 @@
 
 
             <section class="project-section">
-
-                <p>
-                    Traditional insect population surveying methods, involving labor-intensive approaches like light traps and pitfall traps, often in remote areas, lead to intrusive and time-consuming data collection processes. Remote sensing, a non-invasive, efficient, and long-term monitoring technique, has emerged as a promising alternative. It streamlines the observation-to-identification process, revolutionizing biological surveying. Classification challenges exist due to overlapping wingbeat frequencies within genera and families, prompting exploration of discriminative factors like body-wing ratio and melanin content for improved precision. Large-scale insect population surveys benefit agriculture, healthcare, and conservation, offering tailored pest control, vector control, and ecological impact assessment, ensuring ecosystem preservation. Using wingbeat frequencies for identification does not explicitly require machine learning, as it possible to isolate the frequency and categorize it with empirical data by hand, but, using machine learning can improve efficiency and speed of the process. Additionally, the data is also noisy, making it take more time for one to isolate and identify potential signals. The use of machine learning for this task can help mitigate this. While this does require the labeling of some data, labeling 5-10% of the dataset and employing a model to learn based upon this, takes less time than labeling the entire dataset without the utilization of a model. 
-                </p>
+                <br>
+                <h2> Why is this research is important? </h2>
+                <p> This work addresses the need for more efficient and non-intrusive insect population surveying methods. Traditional approaches are labor-intensive and time-consuming, often requiring physical presence in remote areas. The use of remote sensing, particularly focusing on wingbeat frequency (WBF), presents a transformative solution. The motivation arises from the challenges in traditional methods, where overlapping WBF within insect genera and families poses classification difficulties. By exploring discriminative factors like body-wing ratio, this work aims to enhance precision in insect identification. The implications extend to agriculture, healthcare, and conservation, offering benefits such as tailored pest control, vector control, and ecological impact assessment for ecosystem preservation. </p>
+                
+                <h2> Delving into Wingbeat Frequency as a Discriminatory Feature </h2>
+                <p>Studies on insect identification via wingbeat frequency have been growing in prevalence alongside advances in technology<sup>3</sup>. Recent research emphasizes the utilization of lidar, radar, and bioacoustics in remote insect sensing, each tailored to specific data acquisition needs, with acoustic sensing suitable for solid mediums, radar excelling in covering extensive spatial ranges, and lidar requiring specialized expertise<sup>3</sup>. Machine learning techniques applied in this context involve complex processes, including feature selection, similarity classification, and Bayesian classifiers<sup>1,2,5,8</sup>. Some studies explore various models for optimal data analysis<sup>8,11</sup>. These investigations commonly employ remote sensing and optical tachometry to record insect transits and apply Fourier spectral analysis for deeper insight into frequency components<sup>6</sup>.</p>
+                
+                <h2> Our Goal</h2>
+                <p> Our goal is to create a system that offers intuitive setup and remote management. The core of our proposed system comprises a Raspberry Pi Model 4 Revision B and infrared sensor attached to a plastic panel. The results are saved as csv files, which serve as input for the model, with taxonomic classification as the output. The primary objective of the final version of the system is to collect insect transit data, ensure data cleanliness, identify potential signals, and, most significantly, determine the insect found within each signal by cross-referencing empirical wingbeat frequency data. This project serves as preliminary research into the use of machine learning to classify insects using wingbeat frequency and other discriminating features. The data utilized to train this model was collected by a collaborating physics lab. With the use of transfer learning, we aim to apply this methodology to sets of data gathered by our prototyped machine. </p>
+                
+            
+                  
+                  <h2> How it Works </h2>
+                  <p>The dataset consists of 6 .csv files, each with 65 columns (features) and a variable number of rows (samples):
+                    <ul>
+                      <strong>Data Files:</strong>
+                        <ul>
+                          <li><code>HouseFly.csv</code> - 58715 rows</li>
+                          <li><code>AnophelesFemale.csv</code> - 7651 rows</li>
+                          <li><code>AedesFemale.csv</code> - 5683 rows</li>
+                          <li><code>AnophelesMale.csv</code> - 1996 rows</li>
+                          <li><code>AedesMale.csv</code> - 641 rows</li>
+                          <li><code>BumbleBee.csv</code> - 509 rows</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    I developed a series of Python scripts to preprocess and analyze entomological data stored in CSV files. The <span class="highlighted-text">data_processing.py</span> script reads CSV files related to different insect families, removed headers, selected specific columns, and created new condensed CSV files with relevant columns. The processed datasets were enhanced through the incorporation of calculated ratios, achieved by implementing feature engineering techniques to capture the nuanced relationships between body and wing contributions. 
+                    <br> <br> Using the <span class="highlighted-text">data_exploration.py</span> script, I created a dictionary of DataFrames for the processed files and performed exploratory data analysis. Information, descriptive statistics, and the distribution of family labels were examined, providing a comprehensive understanding of the dataset. 
+                    <br><br> Labeling and mapping were essential steps in enhancing the dataset. The <span class="highlighted-text">family_mapping.py</span> script assigned family labels to each condensed CSV file, while the <span class="highlighted-text">sex_mapping.py</span> script introduced a 'Sex' column to selected datasets. These labeling processes facilitated subsequent analyses and model training.
+                    <br><br> The combination of datasets was executed using <span class="highlighted-text">aggregate_family_data.py</span> and <span class="highlighted-text">aggregate_sex_data.py</span>. These scripts loaded and merged multiple CSV files into a single DataFrame, eliminating redundant columns. The result was a consolidated CSV file ready for further analysis. 
+                    <br><br> The final phase involved building and testing machine learning models using the <span class="highlighted-text">train_family_prediction_models.py</span> script. The RandomForest, SVM, and KNN classifiers were employed to predict insect families based on features. The script handled missing values, split the data into training and testing sets, and evaluated the models using metrics such as accuracy, precision, recall, and F1 score. Feature importances were also explored, providing insights into the significance of different features in making predictions. Additional scripts, <span class="highlighted-text">train_sex_prediction_models.py</span> and <span class="highlighted-text">multioutput_prediction.py</span> predicted insect sex based on features and performed multioutput prediction for family and sex.
+                  </p>
+                  
+                <h2> Evaluation Metrics & Results </h2>
             </section>
         </main>
     </div>

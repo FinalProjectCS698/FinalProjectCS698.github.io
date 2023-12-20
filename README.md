@@ -1,6 +1,7 @@
 This project involves preprocessing and analyzing entomological data related to different insect species. The following scripts should be executed in a specific order to ensure proper data processing and analysis.
 
 Prerequisites
+
 Before running the scripts, ensure that you have the following prerequisites installed:
 
 - Python 3.11.4

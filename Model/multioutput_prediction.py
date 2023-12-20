@@ -6,6 +6,8 @@ from sklearn.multioutput import MultiOutputClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
+from sklearn.metrics import precision_score, recall_score, f1_score, classification_report
+
 
 # Set the path to your data directory
 data_path = r'C:\Users\Rachel\Documents\FinalProjData'
@@ -114,3 +116,35 @@ feature_importance_df = feature_importance_df.sort_values(by='Importance', ascen
 # Display the feature importances
 print("Feature Importances for Sex Prediction:")
 print(feature_importance_df)
+
+# Evaluate precision, recall, and F1 score for sex prediction
+sex_precision = precision_score(y_sex_test, y_sex_pred, average='weighted')
+sex_recall = recall_score(y_sex_test, y_sex_pred, average='weighted')
+sex_f1 = f1_score(y_sex_test, y_sex_pred, average='weighted')
+
+# Print evaluation metrics for sex prediction
+print("\nSex Prediction Metrics:")
+print("Precision:", sex_precision)
+print("Recall:", sex_recall)
+print("F1 Score:", sex_f1)
+
+# Evaluate precision, recall, and F1 score for family prediction
+family_precision = precision_score(y_family_test, y_family_pred, average='weighted')
+family_recall = recall_score(y_family_test, y_family_pred, average='weighted')
+family_f1 = f1_score(y_family_test, y_family_pred, average='weighted')
+
+# Print evaluation metrics for family prediction
+print("\nFamily Prediction Metrics:")
+print("Precision:", family_precision)
+print("Recall:", family_recall)
+print("F1 Score:", family_f1)
+
+# Generate classification report for sex prediction
+sex_classification_report = classification_report(y_sex_test, y_sex_pred)
+print("\nSex Prediction Classification Report:")
+print(sex_classification_report)
+
+# Generate classification report for family prediction
+family_classification_report = classification_report(y_family_test, y_family_pred)
+print("\nFamily Prediction Classification Report:")
+print(family_classification_report)

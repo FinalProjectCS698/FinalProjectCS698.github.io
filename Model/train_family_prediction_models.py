@@ -4,7 +4,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, classification_report
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 # Set the path to your data directory
 data_path = r'C:\Users\Rachel\Documents\FinalProjData'
@@ -110,9 +112,7 @@ print(feature_importance_df)
 
 ################################################################
 
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.metrics import classification_report
+
 
 def evaluate_model(model, X_test, y_test, model_name):
     # Predictions on the testing set

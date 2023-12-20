@@ -217,4 +217,14 @@ header,
     }
 }
 
-/*  */
+
+  .highlighted-text {
+    font-family: "Monosten Fat Pro", monospace;
+    background-color: #dedee4;
+    color: #ec5c5c;
+    border-radius: 5px;
+    padding: 3px;
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: bold;
+  }
